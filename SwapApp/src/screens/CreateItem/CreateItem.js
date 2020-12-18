@@ -8,7 +8,7 @@ import { Button, ErrorView, TextField } from '_components';
 import styles from '_screens/CreateItem/CreateItem.styles';
 import { TextStyles } from '_theme';
 import strings from '_localization';
-import { createItem, exploreItems, ITEM_TYPES } from '_actions/ItemActions';
+import { createItem, exploreItems, ITEM_TYPES, myItems } from '_actions/ItemActions';
 import ImagePicker from 'react-native-image-crop-picker';
 import cameraIcon from '_assets/ic_camera/ic_camera.png';
 import galleryIcon from '_assets/ic_gallery/ic_gallery.png';
@@ -44,11 +44,13 @@ function CreateItem() {
       availableToPickup: true
     }, () => {
       dispatch(exploreItems())
+      dispatch(myItems())
       setTitle('')
       setDescription('')
       setItemImage(PLACE_HOLDER_IMAGE)
       setPickupLocation('')
       setErrors([])
+
       navigation.navigate(NAVIGATION.home)
     }));
   }, [
@@ -61,6 +63,7 @@ function CreateItem() {
     errors,
     setErrors,
     exploreItems,
+    myItems,
     setTitle,
     setDescription,
     setItemImage,

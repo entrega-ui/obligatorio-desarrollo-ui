@@ -54,3 +54,7 @@ This template follows a very simple project structure:
 
 ## Styleguide
 For coding styling we decided to go with ESLint and [React Native community's styleguide](https://github.com/facebook/react-native/tree/master/packages/eslint-config-react-native-community#readme).
+
+## Defense 
+
+Having at profile screen a gold that the user can achieve will increase the amount of items created by a user.
